@@ -1,6 +1,0 @@
-activated
-file exists /home/ticketsd/domains/tickets.desertashram.co.il/public_html/wp-content/mu-plugins/selective-plugin-loading.php
-activated
-file exists /home/sb074637/domains/p59699-212-12776.s212.upress.link/public_html/wp-content/mu-plugins/selective-plugin-loading.php
-activated
-file exists /home/sb074637/domains/p59699-212-12776.s212.upress.link/public_html/wp-content/mu-plugins/selective-plugin-loading.php
