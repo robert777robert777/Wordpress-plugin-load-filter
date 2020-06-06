@@ -2,17 +2,24 @@
 /*
 Plugin Name: Selective plugins loading
 Author: Robert Kruglyak
+Version: 1.1
 */
 defined( 'ABSPATH' ) or die( 'Nope, not accessing this' );
 
 
 
-function add_my_stylesheet() 
+function add_my_stylesheet($hook_suffix ) 
 {
-    wp_enqueue_style( 'myCSS', plugins_url( '/backend.css', __FILE__ ),0,6 );
+    if ($hook_suffix !== 'plugins_page_selective-plugins-loading') return;
+	wp_enqueue_style( 'myCSS', plugins_url( '/backend.css', __FILE__ ),null,1 );
+	wp_enqueue_script('vue', plugins_url('vue.js',__FILE__ ));
+	wp_enqueue_script('ln_script', plugins_url('backend.js', __FILE__), null, false, true);
+	
+	//file_put_contents(__DIR__ . '/log11.txt',print_r($hook_suffix ,true)."\n",FILE_APPEND);
 }
 
-add_action('admin_print_styles', 'add_my_stylesheet');
+//add_action('admin_print_styles', 'add_my_stylesheet');
+add_action('admin_enqueue_scripts', 'add_my_stylesheet');
 
 
 function demo_settings_page()
@@ -47,7 +54,7 @@ function demo_page()
 
 function menu_item()
 {
-  add_submenu_page("plugins.php", 'Selective plugins loading', "Selective plugins loading", "manage_options", "amiram", "demo_page"); 
+  add_submenu_page("plugins.php", 'Selective plugins loading', "Selective plugins loading", "manage_options", "selective-plugins-loading", "demo_page"); 
 }
  
 add_action("admin_menu", "menu_item");

@@ -1,10 +1,7 @@
 <script>var filters</script>
 <script>filters = <?php /*include(plugin_dir_path(__FILE__) .  "1.json");*/echo get_option('selective_plugin_loading'); ?></script>
 <script>if (!filters) filters = [];</script>
-
-<script src="<?php echo plugins_url( '/vue.js', __FILE__ ); ?>"></script>
 <script>var plugins = <?php echo json_encode(get_option('active_plugins')); ?></script>
-<!--    <script src="<?php echo plugins_url( '/backend.js', __FILE__ ); ?>"></script> -->
 
 	<h2>Selective plugins loading</h2>
 	
@@ -57,4 +54,3 @@
          </form>
       </div>		
     </div>
-<script><?php include ('backend.js');?></script>
