@@ -1,0 +1,13 @@
+/* textarea, input:not([type]), input[type="text"]{width:600px;padding:2px;border-width:2px;margin:1px;} */
+fieldset{display: initial;
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+textarea{
+	resize:horizontal;
+	white-space:pre;
+	width:100%;
+}
+/* label span{min-width:11ch;float:left;} */
+
